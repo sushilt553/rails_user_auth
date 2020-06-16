@@ -3,5 +3,8 @@
 <% end %>
 
 <h1>Practice Rails </h1>
-<a href="<%= new_session_url %>">Login</a>
-<a href="<%= new_user_url %>">SignUp</a>
+
+<% if !current_user%>
+    <a href="<%= new_session_url %>">Login</a>
+    <a href="<%= new_user_url %>">SignUp</a>
+<% end%>
