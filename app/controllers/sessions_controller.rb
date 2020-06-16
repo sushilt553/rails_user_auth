@@ -12,9 +12,11 @@ class SessionsController < ApplicationController
 
         if @user
             login(@user)
-            render :show
+            redirect_to root_url
         else
-            render json: ["Username/Password didn't match"], status: :unprocessable_entity
+            flash.now[:errors] = ["Username/Password didn't match"]
+            render :new
+            # render json: ["Username/Password didn't match"], status: :unprocessable_entity
         end
     end
 

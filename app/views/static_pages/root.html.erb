@@ -1,0 +1,7 @@
+<% if current_user %>
+<h1>Welcome <%=  @user.username %></h1>
+<% end %>
+
+<h1>Practice Rails </h1>
+<a href="<%= new_session_url %>">Login</a>
+<a href="<%= new_user_url %>">SignUp</a>
