@@ -42,3 +42,118 @@ Migrating to CreateUsers (20200616161846)
   ↳ bin/rails:9
   [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
+Started GET "/" for ::1 at 2020-06-16 12:39:22 -0400
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/sushilthapa/.rvm/gems/ruby-2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/sushilthapa/.rvm/gems/ruby-2.5.0/gems/railties-5.2.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/sushilthapa/.rvm/gems/ruby-2.5.0/gems/railties-5.2.4.3/lib/rails/templates/rails/welcome/index.html.erb (7.7ms)
+Completed 200 OK in 32ms (Views: 17.5ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "sushilt553"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "sushilt553"], ["LIMIT", 1]]
+  [1m[36mUser Create (4.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "sushilt553"], ["password_digest", "$2a$12$vnCvtGfYw0tD3NlHUZH6IeQKV0u8MhJQ8i2c8M2o12M3n4nh7LR/i"], ["session_token", "WVb6dse5aBdneTuR0fzrKQ"], ["created_at", "2020-06-16 16:50:54.582694"], ["updated_at", "2020-06-16 16:50:54.582694"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (8.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "sushilt553"], ["LIMIT", 1]]
+Started GET "/users/new" for ::1 at 2020-06-16 12:53:19 -0400
+Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::MissingTemplate (Missing template users/new, application/new with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/sushilthapa/Desktop/project1/app/views"
+):
+  
+app/controllers/users_controller.rb:4:in `new'
+Started GET "/users/new" for ::1 at 2020-06-16 12:54:33 -0400
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/sushilthapa/.rvm/gems/ruby-2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms)
+
+
+
+ActionView::MissingTemplate - Missing template users/new, application/new with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/sushilthapa/Desktop/project1/app/views"
+:
+  app/controllers/users_controller.rb:4:in `new'
+
+Started GET "/users/new" for ::1 at 2020-06-16 12:54:34 -0400
+Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+
+ActionView::MissingTemplate - Missing template users/new, application/new with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/sushilthapa/Desktop/project1/app/views"
+:
+  app/controllers/users_controller.rb:4:in `new'
+
+Started POST "/__better_errors/458224350814a278/variables" for ::1 at 2020-06-16 12:54:35 -0400
+Started GET "/users/new" for ::1 at 2020-06-16 12:54:36 -0400
+Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+
+ActionView::MissingTemplate - Missing template users/new, application/new with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/sushilthapa/Desktop/project1/app/views"
+:
+  app/controllers/users_controller.rb:4:in `new'
+
+Started POST "/__better_errors/321236e96d81d7a9/variables" for ::1 at 2020-06-16 12:54:36 -0400
+Started GET "/users/new" for ::1 at 2020-06-16 12:54:38 -0400
+Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+
+ActionView::MissingTemplate - Missing template users/new, application/new with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/sushilthapa/Desktop/project1/app/views"
+:
+  app/controllers/users_controller.rb:4:in `new'
+
+Started POST "/__better_errors/a22d468d452bf11d/variables" for ::1 at 2020-06-16 12:54:38 -0400
+Started GET "/users/new" for ::1 at 2020-06-16 12:54:40 -0400
+Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+
+ActionView::MissingTemplate - Missing template users/new, application/new with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/sushilthapa/Desktop/project1/app/views"
+:
+  app/controllers/users_controller.rb:4:in `new'
+
+Started POST "/__better_errors/d0d4b03101f7b949/variables" for ::1 at 2020-06-16 12:54:40 -0400
+Started GET "/users/new" for ::1 at 2020-06-16 12:56:37 -0400
+Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.0ms)
+
+
+
+ActionView::MissingTemplate - Missing template users/new, application/new with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/sushilthapa/Desktop/project1/app/views"
+:
+  app/controllers/users_controller.rb:4:in `new'
+
+Started POST "/__better_errors/543b93d07ec3f413/variables" for ::1 at 2020-06-16 12:56:37 -0400
+Started GET "/users/new" for ::1 at 2020-06-16 12:56:49 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (43.1ms)
+Completed 200 OK in 1028ms (Views: 1026.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2020-06-16 12:56:50 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 45ms (Views: 44.4ms | ActiveRecord: 0.0ms)
+
+
