@@ -10,10 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_16_161846) do
+ActiveRecord::Schema.define(version: 2020_06_24_153947) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "campaigns", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "goal", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "donations", force: :cascade do |t|
+    t.integer "amount", default: 0
+    t.integer "campaign_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["campaign_id"], name: "index_donations_on_campaign_id"
+  end
+
+  create_table "matches", force: :cascade do |t|
+    t.integer "maximum_pledge_amount", default: 0
+    t.integer "cumulative_match_amount", default: 0
+    t.integer "cumulative_match_count", default: 0
+    t.integer "campaign_id", null: false
+    t.float "ratio", default: 1.0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["campaign_id"], name: "index_matches_on_campaign_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username", null: false
